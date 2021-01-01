@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 jumbotron-fluid border shadow">
+          <div class="jumbotron page-banner-mood" style="background-color: #bee0cf;">
+          </div>
+          
+          <div class="container" style="margin-bottom: 5vw;">
+              <h1 style="margin-bottom: 0%; padding-bottom: 0%;">How are you feeling today?</h1>
+              <h5 style="margin-top: 0%; padding-top: 0%;">Log your mood!</h5>
+            </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 float-left">
+            <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+              <div class="tabHeader">
+                <h4>Add notes</h4>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                <div class="col-10">
+                  <input class="form-control" type="date" value="2020-12-31" id="example-date-input">
+                </div>
+              </div>
+
+              <form>
+                <input class="inputNotes" style="border:none; width: 100%;" type="text" placeholder="Add notes..">
+                <div class="text-right">
+                  <button class="btn btn-success" type="submit">Save</button>
+                </div>
+              </form>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 float-right">
+            <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+              <label for="moodImbalance">Rate your mood imbalance</label>
+              <div class="rangeslider"> 
+                <input class="myslider" type="range" id="moodImbalance" name="moodImbalance" min="0" max="5" value="0" oninput="amount.value=moodImbalance.value">                                                       
+                <output id="amount" name="amount" for="moodImbalance">0</output>
+              </div> 
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-4 float-right">
+            <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+              <label for="stressLevel">Rate your stress level</label>
+              <div class="rangeslider"> 
+                <input class="myslider" type="range" id="stressLevel" name="stressLevel" min="0" max="5" value="0" oninput="amount2.value=stressLevel.value">                                                       
+                <output id="amount2" name="amount2" for="stressLevel">0</output>
+              </div> 
+            </div>
+          </div>
+          
+
+            <div class="col-lg-4 col-md-4 float-right">
+              <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+                <p>Today's most extreme depressed mood</p>
+                <select class="custom-select">
+                  <option selected>Today's most extreme depressed mood</option>
+                  <option value="1">Severe</option>
+                  <option value="2">Moderate</option>
+                  <option value="3">Mild</option>
+                  <option value="4">None</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-4 float-right">
+              <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+                <p>Today's most extreme elevated mood</p>
+                <select class="custom-select">
+                  <option selected>Today's most extreme elevated mood</option>
+                  <option value="1">Severe</option>
+                  <option value="2">Moderate</option>
+                  <option value="3">Mild</option>
+                  <option value="4">None</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="clearfix"></div>
+            <div class="col-lg-4 col-md-4 float-right">
+              <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+                <p>Today's most extreme anxiety</p>
+                <select class="custom-select">
+                  <option selected>Today's most extreme anxiety</option>
+                  <option value="1">Severe</option>
+                  <option value="2">Moderate</option>
+                  <option value="3">Mild</option>
+                  <option value="4">None</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-4 float-right">
+              <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border">
+                <p>Today's most extreme irritability</p>
+                <select class="custom-select">
+                  <option selected>Today's most extreme irritability</option>
+                  <option value="1">Severe</option>
+                  <option value="2">Moderate</option>
+                  <option value="3">Mild</option>
+                  <option value="4">None</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 float-left">
+              <div class="jumbotron shadow-sm p-3 mb-5 bg-white rounded border" style="height: 50%">
+                <div class="tabHeader">
+                  <h4>Your mood today:</h4>
+                </div>
+                  <!--Bar Chart-->
+                  <div class="card">
+                    <div class="card-body">
+                      <canvas id="barChart" height="200">
+  
+                      </canvas>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            
+            <div class="float-sm-right" style="padding-right: 1%;">
+              <button class="btn btn-primary" type="submit">Save Record</button>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="savy.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script src="barChartMood.js"></script>
+     </body>
+</html>
